@@ -1,5 +1,4 @@
 let h1 = document.getElementById("h1");
-let button = document.querySelectorAll("li");
 let h3 = document.querySelectorAll("h3");
 let amd, usd, rub;
 let beg = 20000;
@@ -37,52 +36,64 @@ class Myclass{
             amd = type;
         }
     }
+    button(x){
+        return document.querySelectorAll("li")[x];
+    }
+    eventlist(index,event,foo){
+        return this.button(index).addEventListener(event,foo);
+    }
 }
-let myclass1 = new Myclass;
-button[0].addEventListener("click",function(){
+let myclass = new Myclass;
+//Language:
+
+myclass.eventlist(0,"click",function(){
     leng = "arm";
-    myclass1.pay();
+    myclass.pay();
     h3[0].innerHTML = button[0].textContent;
 })
-button[1].addEventListener("click",function(){
+myclass.eventlist(1,"click",function(){
     leng = "ang";
-    myclass1.pay();
+    myclass.pay();
     h3[0].innerHTML = button[1].textContent;
 })
-button[2].addEventListener("click",function(){
+myclass.eventlist(2,"click",function(){
     leng = "ger";
-    myclass1.pay();
+    myclass.pay();
     h3[0].innerHTML = button[2].textContent;
 })
-button[3].addEventListener("click",function(){
+//Level:
+
+myclass.eventlist(3,"click",function(){
     type = beg;
-    myclass1.pay();
+    myclass.pay();
     h3[1].innerHTML = button[3].textContent;
 })
-button[4].addEventListener("click",function(){
+myclass.eventlist(4,"click",function(){
     type = ave;
-    myclass1.pay();
+    myclass.pay();
     h3[1].innerHTML = button[4].textContent;
 })
-button[5].addEventListener("click",function(){
+myclass.eventlist(5,"click",function(){
     type = adv;
-    myclass1.pay();
+    myclass.pay();
     h3[1].innerHTML = button[5].textContent;
 })
-button[6].addEventListener("click",function(){
-    myclass1.pay();
+// Value:
+
+myclass.eventlist(6,"click",function(){
+    myclass.pay();
     h1.innerHTML = amd + "amd";
     val = 'am';
     h3[2].innerHTML = button[6].textContent;
 })
-button[7].addEventListener("click",function(){
-    myclass1.pay();
+myclass.eventlist(7,"click",function(){
+    myclass.pay();
     h1.innerHTML = usd;
     val = 'us';
     h3[2].innerHTML = button[7].textContent;
 })
-button[8].addEventListener("click",function(){
-    myclass1.pay();
+myclass.eventlist(8,"click",function(){
+    myclass.pay();
     h1.innerHTML = rub;
     val = 'ru';
     h3[2].innerHTML = button[8].textContent;
